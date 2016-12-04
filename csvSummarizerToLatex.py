@@ -17,6 +17,7 @@ def summarizeCsvToLatex(name, significant_figure, multipliers, isStd):
             s_orig = round_sig(s_orig, significant_figure[i])
             dfn = pd.DataFrame(s_orig)
             dfn.columns = [df.columns[i]]
+            dfn.index = df.index
             df.ix[:, [i]] = dfn
     df.ix[:, :] = df.ix[:, :].astype(str)
     for i in range(len(df.index)):
@@ -67,7 +68,7 @@ def str_isdigit(str):
 
 
 if __name__ == '__main__':
-    name = "sample/sample"
+    name = "log/isSuccessed_teian4"
     significant_figure = [None, 3, 3]  # 有効桁数，Noneの場合は桁数調整をしない
     multipliers = [None, 4, 4]  # 各列のデータを10の乗数で割る，Noneの場合は乗算をしない
     isStd = [False, False, True]  # 標準偏差かどうか，標準偏差なら左のやつと結合
