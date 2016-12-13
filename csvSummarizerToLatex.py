@@ -68,7 +68,7 @@ def str_isdigit(str):
 
 
 if __name__ == '__main__':
-    name = "log/isSuccessed_teian4"
+    name = "sample/sample1"
     significant_figure = [None, 3, 3]  # 有効桁数，Noneの場合は桁数調整をしない
     multipliers = [None, 4, 4]  # 各列のデータを10の乗数で割る，Noneの場合は乗算をしない
     isStd = [False, False, True]  # 標準偏差かどうか，標準偏差なら左のやつと結合

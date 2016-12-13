@@ -7,7 +7,7 @@ def combinateCsvToLatex(file_name, names, method_names, significant_figure, mult
     dfs = []
     for h in range(len(names)):
         name = names[h]
-        df = pd.DataFrame.from_csv(name + ".csv")  # ファイル読み込み
+        df = pd.DataFrame.from_csv(name + ".csv", encoding="shift-jis")  # ファイル読み込み
         if len(df.columns) != len(significant_figure):
             raise ValueError(
                 "The length of the array of significant figure does not match the number of columns of data.")
@@ -86,9 +86,9 @@ def str_isdigit(str):
 
 
 if __name__ == '__main__':
-    file_name = "log/summarize"
-    names = ["log/isSuccessed_ebpnes2", "log/isSuccessed_teian3"]
-    method_names = ["EBP-NES2", "提案手法3"]
+    file_name = "sample/summarize"
+    names = ["sample/sample1", "sample/sample2"]
+    method_names = ["sample1", "sample2"]
     significant_figure = [None, 3, 3]  # 有効桁数，Noneの場合は桁数調整をしない
     multipliers = [None, 4, 4]  # 各列のデータを10の乗数で割る，Noneの場合は乗算をしない
     isStd = [False, False, True]  # 標準偏差かどうか，標準偏差なら左のやつと結合
