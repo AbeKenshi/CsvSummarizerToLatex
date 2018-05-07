@@ -86,10 +86,11 @@ def str_isdigit(str):
 
 
 if __name__ == '__main__':
-    file_name = "sample/summarize"
-    names = ["sample/sample1", "sample/sample2"]
-    method_names = ["sample1", "sample2"]
+    task = "mountaincar"
+    file_name = "log/summarize_" + task
+    names = ["log/isSuccessed_ebpnes_" + task, "log/isSuccessed_sapga_" + task, "log/isSuccessed_esapga_" + task]
+    method_names = ["EBP-NES", "SAP-GA", "eSAP-GA"]
     significant_figure = [None, 3, 3]  # 有効桁数，Noneの場合は桁数調整をしない
-    multipliers = [None, 4, 4]  # 各列のデータを10の乗数で割る，Noneの場合は乗算をしない
+    multipliers = [None, 2, 2]  # 各列のデータを10の乗数で割る，Noneの場合は乗算をしない
     isStd = [False, False, True]  # 標準偏差かどうか，標準偏差なら左のやつと結合
     combinateCsvToLatex(file_name, names, method_names, significant_figure, multipliers, isStd)
