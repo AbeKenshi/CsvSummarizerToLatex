@@ -1,1 +1,1 @@
-# csv_summarizer_to_latex
+# csv-summarizer-to-latex
